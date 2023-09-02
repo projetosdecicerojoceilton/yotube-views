@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Views</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header id="topo">
+        <h1> Youtube Views </h1>
+    </header>
+
+    <section id="content">
+        <form id="formulario">
+
+
+            <!-- Serviços -->
+            <label> Selecione o tipo de serviço </label>
+            <select>
+                <optgroup>
+                    <option value="YOUTUBE | Visualizações Com Reposição | 638"> 1000 Visualizações R$ 16,50 </option>
+                </optgroup>
+            </select>
+
+            <!-- Descrições dos serviços -->
+
+            <div class="descricao" data-code="638">
+                <p>
+                    ✅⏳ ➖ Inicia em 30 - 120 Minutos. Se não em até 8 Horas.
+✅⚡ ➖ Após iniciado o Sistema entrega: 1.000 a 5.000 Visualizações por Dia.
+✅👥 ➖ PÚBLICO: Mundial.
+✅🏃 ➖ HQ: Alta Qualidade
+
+⏹ ➖ ♻♾️RV: Este Serviço conta com Reposição Vitalícia, via SUPORTE.
+(Garantia para a vida toda)!✅
+👉 Para Reposição via SUPORTE, so Precisa do ID (Números do pedido).
+
+👉 Retenção 1 minutos até 6 Minutos de Forma ALEATÒRIA
+
+👉 Se ver "concluído" no status e as visualizações não tiverem subido, clique em "curtir" no vídeo e aguarde até 1 minutos e atualize, elas subirão. (ou espere algumas horas pela atualização natural)
+👉 O Vídeo deve ser irrestrito e aberto para TODOS os países
+
+❌ ➖ Só faça um pedido para o mesmo PERFIL / LINK após o pedido anterior estiver sido completado.
+
+❓➖ COMO PREENCHER O CAMPO LINK?
+O campo Link deve ser preenchido com o LINK Do VÌDEO.
+                </p>
+            </div>
+
+            
+        </form>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#formulario").submit(function(event) {
+                event.preventDefault();
+                
+                var dados = '1KetUEqxOfbw5lu_2cyie9bZqcnbBCs8_KW_7nIE5G_YID_DA_PLANILHA';
+                
+                // Dados do formulário
+                var formData = {
+                    'Nome': $("#nome").val(),
+                    'Email': $("#email").val()
+                };
+                
+                $.ajax({
+                    url: "https://sheets.googleapis.com/v4/spreadsheets/" + dados,
+                    type: "GET",
+                    success: function(response) {
+                        alert("Dados enviados com sucesso!");
+                        // Limpe o formulário após o envio bem-sucedido
+                        $("#formulario")[0].reset();
+                    },
+                    error: function(error) {
+                        console.error("Erro ao enviar dados", error);
+                    }
+                });
+            });
+        });
+        </script>
+        
+    
+</body>
+</html>
